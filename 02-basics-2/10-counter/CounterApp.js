@@ -6,17 +6,17 @@ export default defineComponent({
   setup() {
     const count = ref(0)
 
-    function incrementCount() {
+    function increment() {
       count.value++
     }
-    function decrementCount() {
+    function decrement() {
       count.value--
     }
 
     return {
       count,
-      incrementCount,
-      decrementCount,
+      increment,
+      decrement,
     }
   },
 
@@ -27,7 +27,7 @@ export default defineComponent({
         type="button"
         aria-label="Decrement"
         :disabled="count <= 0 "
-        @click="decrementCount"
+        @click="decrement"
       >➖</button>
 
       <span class="count" data-testid="count">{{ count }}</span>
@@ -37,7 +37,7 @@ export default defineComponent({
         type="button"
         aria-label="Increment"
         :disabled="count >= 5 "
-        @click="incrementCount"
+        @click="increment"
       >➕</button>
     </div>
   `,
