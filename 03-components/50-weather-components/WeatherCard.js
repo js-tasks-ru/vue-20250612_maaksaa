@@ -3,9 +3,21 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'WeatherCard',
   props: {
-    weather: Object,
-    kelvin: Number,
-    icons: Object,
+    weather: {
+      type: Object,
+      required: true,
+    },
+
+    icons: {
+      type: Object,
+      required: false,
+      default: () => ({}),
+    },
+  },
+
+  setup() {
+    const kelvin = 273.15
+    return { kelvin }
   },
 
   template: `
@@ -23,7 +35,7 @@ export default defineComponent({
         </div>
       </div>
       <div class="weather-conditions">
-        <div class="weather-conditions__icon" :title="weather.current.weather.description">{{ icons[weather.current.weather.id] }}</div>
+        <div class="weather-conditions__icon" :title="weather.current.weather.description">{{ icons[weather.current.weather.id] || '' }}</div>
         <div class="weather-conditions__temp">{{ (weather.current.temp - kelvin ).toFixed(1) }} °C</div>
       </div>
       <div class="weather-details">

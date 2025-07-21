@@ -11,12 +11,9 @@ export default defineComponent({
   },
 
   setup() {
-    const KELVIN = 273.15
-
     return {
       weatherData: getWeatherData(),
       weatherConditionIcons: WeatherConditionIcons,
-      KELVIN,
     }
   },
 
@@ -25,7 +22,7 @@ export default defineComponent({
       <h1 class="title">Погода в Средиземье</h1>
 
       <ul class="weather-list unstyled-list">
-        <WeatherCard v-for="weatherCity in weatherData" :weather="weatherCity" :kelvin="KELVIN" :icons="weatherConditionIcons" />
+        <WeatherCard v-for="weatherCity in weatherData" :weather="weatherCity" :icons="weatherConditionIcons" />
       </ul>
     </div>
   `,
