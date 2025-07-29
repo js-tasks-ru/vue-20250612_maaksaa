@@ -7,7 +7,9 @@ import MeetupsHeader from './components/MeetupsHeader.vue'
   <div class="wrapper">
     <MeetupsHeader />
     <main class="main">
+
       <RouterView />
+
     </main>
     <MeetupsFooter />
   </div>

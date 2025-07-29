@@ -4,9 +4,11 @@ import { ref } from 'vue'
 import MeetupsAuthForm from '../components/MeetupsAuthForm.vue'
 import LayoutAuth from '../components/LayoutAuth.vue'
 import { register } from '../api.ts'
+
 import { useRouter } from "vue-router";
 
 const router = useRouter()
+
 const email = ref('demo@email')
 const fullname = ref('Demo Organizer')
 const password = ref('password')
@@ -21,7 +23,9 @@ async function onSubmit() {
       password: password.value,
     })
     // Регистрация прошла успешно
+
     router.push('/login')
+
   } catch (error) {
     alert((error as Error).message)
   }
@@ -55,7 +59,9 @@ async function onSubmit() {
 
       <template #append>
         Уже есть аккаунт?
+
         <RouterLink to="/login">Войдите</RouterLink>
+
       </template>
     </MeetupsAuthForm>
   </LayoutAuth>

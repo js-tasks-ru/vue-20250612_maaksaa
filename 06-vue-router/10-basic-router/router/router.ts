@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import PageIndex from '../views/PageIndex.vue'
 import PageFoo from '../views/PageFoo.vue'
 import PageBar from '../views/PageBar.vue'
+
 import PageLogin from '../views/PageLogin.vue'
 import PageRegister from '../views/PageRegister.vue'
 
@@ -23,6 +24,7 @@ export const router = createRouter({
       name: 'bar',
       component: PageBar,
     },
+
     {
       path: '/login',
       name: 'login',
